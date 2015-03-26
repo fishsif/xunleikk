@@ -1,0 +1,689 @@
+body{
+	background-color:#FBFBFB;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none ;
+
+}
+
+li{
+	list-style-type: none;
+}
+
+input,img{
+	border: none;
+}
+
+/*头部开始*/
+#header{
+	/* 父元素使用position属性时，子元素才能相对其定位，否则子元素将相对窗口定位*/
+	position: relative;
+	width: 1200px;
+	height: 102px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+
+	/*解决层级问题!!!!!!*/
+	z-index: 999;
+}
+
+/*logo开始*/
+#header .logo a{
+	position: absolute;
+	top: 28px;
+	left: 2px;
+
+	/*把a显示为块元素，这样才有宽度和高度*/
+	display: block;
+	height: 47px;
+	width: 163px;
+	/*border: 1px solid blue;*/
+	/*用背景图，不是img*/
+	/*头部图片只用一张，每个部分截取其中的一部分，这样可以提高加载速度*/
+	background: url(../images/headernav_0917.png) 0 -41px no-repeat;
+}
+/*logo结束*/
+/*flash开始*/
+#header .flash_pic{
+	position: absolute;
+	left: 165px;
+	top:8px;
+	width: 130px;
+	height: 80px;
+
+}
+/*Flash结束*/
+
+/*搜索框开始*/
+#header .search{
+	position: absolute;
+	left: 414px;
+	top: 24px;
+	width: 357px;
+	height: 40px;
+	/*border: 1px solid red;*/
+	background:url(../images/headernav_0917.png) 0 0 no-repeat;
+
+}
+
+#header .search .search_text{
+	position: absolute;
+	left: 3px;
+	top: 3px;
+	width: 289px;
+	height:32px;
+	border: 1px solid #E4E4E4;
+	text-indent: 10px;
+	color: #C4C4C4;
+	line-height: 34px
+}
+/*搜索框结束*/
+
+/*搜索按钮开始*/
+#header .search .btn{
+	/*border: 1px solid blue;*/
+	position: absolute;
+	left: 292px;
+	top: 3px;
+	width: 61px;
+	height: 34px;
+	background: transparent;
+	/*去除默认边框，就去除了棱角*/
+	border: none;
+	/*鼠标一上去变小手*/
+	cursor: pointer;
+
+}
+/*搜索按钮结束*/
+
+/*搜索文本框点击样式开始*/
+.blue{
+	position: absolute;
+	left: 3px;
+	top: 3px;
+	width: 289px;
+	height:32px;
+	border: 1px solid #4eb7fe;
+	text-indent: 10px;
+	color: #C4C4C4;
+	line-height: 34px;
+	/*阴影 css3*/
+	box-shadow: 0 0 1px #4eb7fe;
+
+
+}
+
+/*搜索文本框点击样式结束*/
+
+#header .search_tag{
+	position: relative;
+	left: 414px;
+	top: 68px;
+
+}
+#header .search_tag a{
+	color: #666666;
+	font-family: "宋体","Arial Narrow";
+	font-size: 12px;
+}
+#header .search_tag a:hover{
+	text-decoration: underline;
+
+}
+
+#header .search_tag a.link{
+	color: #999999;
+}
+#header .search_tag a.link2{
+	/*浏览器兼容，用padding*/
+	padding-left: 12px;
+}
+
+/*用户内容区域开始*/
+#header .userarea{
+	width: 288px;
+
+	height:15px;
+	
+	position: absolute;
+	top: 50px;
+	/*紧挨右边*/
+	right: 100px;
+}
+
+/*用户内容区域三个小div开始*/
+#header .userarea div{
+	float: right;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+#header .userarea div.user_l{
+	/*设置position是因为里面的b元素需要定位*/
+	position: relative;
+	height: 15px;
+	line-height: 15px;
+}
+#header .userarea div.user_l b{
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	left: 0;
+	top: 2px;
+	/*因为b是行内元素，以块元素显示，设置宽高才会起作用*/
+	display: block;
+	background: url(../images/headernav_0917.png) -255px -41px no-repeat;
+	
+	/*在ie6中兼容*/
+	overflow: hidden;
+
+}
+#header .userarea div.user_l a{
+	color: #333333;
+	font-size: 12px;
+	padding-left: 2px;
+}
+#header .userarea div.user_l a:hover{
+	color: #249FF1;
+	text-decoration: underline;
+}
+/*左边div结束*/
+
+/*中间div开始*/
+#header .userarea div.user_m{
+	position: relative;
+	color: #333;
+	font-size: 12px;
+	padding-left: 15px;
+	padding-right: 15px;
+	cursor: pointer;
+	line-height: 15px;
+	top: 2px;
+	height: 30px;
+}
+#header .userarea div.user_m b{
+	display: block;
+	
+width: 12px;
+height: 12px;
+
+
+}
+#header .userarea div.user_m b.left{
+	position: absolute;
+	left: 0;
+	top: 2px;
+	background: url(../images/headernav_0917.png) -267px -41px no-repeat;
+}
+#header .userarea div.user_m b.right{
+	position: absolute;
+	right: 0;
+	top: 2px;
+	background: url(../images/headernav_0917.png) -267px -53px no-repeat;
+}
+/*中间div结束*/
+/*右边开始*/
+#header .userarea div.user_r{
+	/*！！！设置height是为了鼠标移出div时隐藏框不那么快消失*/
+	/*设置一个边框就可以看得很清楚*/
+	height: 30px;
+	margin-left: 4px;
+	position: relative;
+	cursor: pointer;
+	color: #333;
+	font-size: 12px;
+	line-height: 15px;
+	top:2px;
+}
+#header .userarea div.user_r b{
+	display: block;
+	
+width: 12px;
+height: 12px;
+
+
+}
+#header .userarea div.user_r b.left{
+	position: absolute;
+	left: 0;
+	top: 2px;
+	background: url(../images/headernav_0917.png) -279px -41px no-repeat;
+	/*兼容ie6*/
+	width: 12px;
+	height: 12px;
+	overflow: hidden;
+}
+#header .userarea div.user_r b.right{
+	position: absolute;
+	right: 0;
+	top: 2px;
+	background: url(../images/headernav_0917.png) -267px -53px no-repeat;
+}
+/*右边结束*/
+/*右侧隐藏盒子开始*/
+#header .userarea .user_r .hidden_r{
+	position: absolute;
+	/*相对user_r定位*/
+	top: 25px;
+	right: 2px;
+	width: 237px;
+	height: 320px;
+	border: 1px solid #CECECE;
+	background-color: #FBFAFA;
+	padding: 0;
+	display: none;
+
+}
+#header .userarea .user_r .hidden_r .arrow_r{
+	position: absolute;
+	right: 25px;
+
+	top: -8px;
+	width: 15px;
+	height: 12px;
+	background: url(../images/headernav_0917.png) -280px -55px no-repeat;
+
+}
+#header .userarea .user_r .hidden_r dl{
+	border-bottom: 1px solid #E6E6E6;
+	width: 227px;
+	height: 40px;
+	padding:8px 0 8px 10px;
+	overflow: hidden;
+}
+#header .userarea .user_r .hidden_r dl dt{
+	color: #249FF1;
+}
+#header .userarea .user_r .hidden_r dl dd{
+	float: left;
+	line-height: 25px;
+	margin-right: 8px;
+	color: #E5DEDE;
+
+}
+#header .userarea .user_r .hidden_r dl dd a{
+	color: #999999;
+	
+}
+#header .userarea .user_r .hidden_r dl dd a:hover{
+	text-decoration: underline;
+}
+#header .userarea .user_r .hidden_r dl.download{
+	padding:8px 0 8px 10px;
+	height: 95px;
+	width: 227px;
+	border-bottom: none;
+	
+}
+#header .userarea .user_r .hidden_r dl.download dd{
+	height: 14px;
+	margin-top: 5px;
+	/*不自动换行*/
+	white-space: nowrap;
+	line-height: 20px;
+}
+#header .userarea .user_r .hidden_r dl.download dd a{
+	color: #249FF1;
+}
+
+
+#header .userarea .user_r .hidden_r .hidden_b{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 208px;
+	height: 30px;
+	background: #efefef;
+	
+
+
+}
+#header .userarea .user_r .hidden_r .hidden_b a{
+	position: absolute;
+	right: 10px;
+	color: #333;
+	line-height: 30px;
+}
+#header .userarea .user_r .hidden_r .hidden_b a:hover{
+	color: #249FF1;
+	text-decoration: underline;
+}
+/*右侧隐藏盒子结束*/
+
+/*中间隐藏盒子开始*/
+#header .userarea .user_m .hidden_m{
+	position: absolute;
+	top: 25px;
+	left: -80px;
+
+	/*去掉padding，不会太宽*/
+	padding: 0;
+	height: 126px;
+	width: 237px;
+	border: 1px solid #CECECE;
+	display: none;
+
+}
+#header .userarea .user_m .hidden_m .hidden_m_top{
+	position: absolute;
+	left: 0;
+	top: 0;
+	/*width: 237px;*/
+	/*因为.hidden_m的padding为0，所以width比237小点*/
+	width: 207px;
+	height: 32px;
+	background: #FBFAFA;
+	border-bottom: 1px solid #E6E6E6;
+}
+#header .userarea .user_m .hidden_m .hidden_m_top span{
+	display: block;
+	height: 31px;
+	color: #333333;
+	font-size: 14px;
+	line-height: 32px;
+	text-align: center;
+}
+#header .userarea .user_m .hidden_m .hidden_m_top .span_style{
+	color: #249FF1;
+	border-bottom: 2px solid #249FF1;
+}
+#header .userarea .user_m .hidden_m .hidden_m_top span.update{
+
+
+
+	width: 84px;
+	position: absolute;
+	left: 40px;
+}
+#header .userarea .user_m .hidden_m .hidden_m_top span.history{
+	position: absolute;
+	left: 125px;
+	width: 84px;
+	
+}
+
+/*中间隐藏盒子中部*/
+#header .userarea .user_m .hidden_m .hidden_m_m{
+	position: absolute;
+	
+	top: 33px;
+	left: 0;
+	height: 62px;
+	width: 207px;
+	background: #FFFFFF;
+}
+/*中间隐藏盒子中部结束*/
+/*中间隐藏盒子底部*/
+#header .userarea .user_m .hidden_m .hidden_m_b{
+	position: absolute;
+	top: 98px;
+	left: 0;
+	width: 207px;
+	height: 28px;
+	background: #EFEFEF;
+}
+#header .userarea .user_m .hidden_m .hidden_m_b a{
+	position: absolute;
+	color: #333333;
+	line-height: 28px;
+	right: 10px;
+}
+#header .userarea .user_m .hidden_m .hidden_m_b a:hover{
+	color: #249FF1;
+	text-decoration:underline;
+}
+
+/*中间隐藏盒子底部结束*/
+
+/*<!-- tab切换观看记录 -->*/
+#header .userarea .user_m .hidden_m .history_box{
+	position: absolute;
+	left: -1px;
+	top: 33px;
+	width: 207px;
+	height: 214px;
+	border-left:1px solid #CECECE;
+	border-right:1px solid #CECECE; 
+
+	border-bottom:1px solid #CECECE; 
+	background: #FFFFFF;
+	display: none;
+
+}
+#header .userarea .user_m .hidden_m .history_box p{
+	position: absolute;
+	top: 55px;
+	left: 78px;
+	color: #999999;
+	cursor: text;
+}
+#header .userarea .user_m .hidden_m .history_box dl{
+	position: absolute;
+	top: 110px;
+	line-height: 20px;
+}
+#header .userarea .user_m .hidden_m .history_box dl dt{
+	color: #999999;
+	cursor: text;
+}
+/*解决ie6中，字体分两行显示的问题*/
+#header .userarea .user_m .hidden_m .history_box dl dd{
+	width: 227px;
+	height: 20px;
+	overflow: hidden;
+}
+
+
+#header .userarea .user_m .hidden_m .history_box dl dd a{
+	color: #333;
+}
+
+#header .userarea .user_m .hidden_m .history_box dl dd a:hover{
+	color: #249FF1;
+	text-decoration:underline;
+}
+#header .userarea .user_m .hidden_m .arrow{
+	width: 13px;
+	height: 12px;
+	position: absolute;
+	left: 113px;
+	top: -7px;
+	background: url(../images/headernav_0917.png) -280px -55px no-repeat;
+}
+/*<!-- tab切换观看记录结束 -->*/
+/*中间隐藏盒子结束*/
+/*用户内容区域三个小div结束*/
+
+/*用户内容区域结束*/
+
+/*头部结束*/
+
+/*导航栏开始*/
+#nav{
+
+	width: 100%;
+	height: 36px;
+	background: #249FF1;
+
+}
+#nav .nav_box{
+	position: relative;
+	width: 1200px;
+	height: 36px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+}
+#nav .nav_box ul.navarea_l li{
+	float: left;
+	line-height: 36px;
+	
+}
+#nav .nav_box ul.navarea_l li.navarea_one a{
+	/*隐藏左边竖条*/
+	padding-left: 0;
+	font-weight: bold;
+}
+#nav .nav_box ul.navarea_l li.navarea_one a:hover{
+	background: #249FF1;
+	/*以下两行是为了不在鼠标移上去时候右边小竖线消失，
+	跟#nav .nav_box ul.navarea_l li a:hover里作比较！！！*/
+	padding-right: 15px;
+	margin-right:0;
+}
+#nav .nav_box ul.navarea_l li a{
+	font-size: 14px;
+	color: #FFFFFF;
+	display: block;
+	/*a也设浮动，为了兼容性*/
+	float: left;
+	/*17比15多2px,是为了放小竖线图标*/
+	padding: 0 15px 0 17px;
+	
+	background: url(../images/headernav_0917.png) -355px -41px no-repeat;
+	
+}
+#nav .nav_box ul.navarea_l li a:hover{
+	/*相对定位，使其位于上层，不会被因margin-right*/
+	/*为负值而向左移动的元素覆盖！！！！*/
+	position: relative;
+	background: #4fc4fb;
+	/*padding和margin抵消，整体布局不会移动！！*/
+	padding-right: 17px;
+	margin-right: -2px;
+}
+/*导航栏左侧new图标开始*/
+#nav .nav_box span.new{
+	position: absolute;
+	top: 0;
+	left: 343px;
+	display: block;
+	width: 25px;
+	height: 11px;
+	background: url(../images/headernav_0917.png) -291px -72px no-repeat;
+}
+/*导航栏左侧new图标结束*/
+/*导航栏右边开始*/
+#nav .nav_box ul.navarea_r{
+	padding-right: 12px;
+}
+#nav .nav_box ul.navarea_r li{
+	float: right;
+}
+#nav .nav_box ul.navarea_r li a{
+	line-height: 36px;
+	color: #c7f4ff;
+	padding: 13px;
+	font-size: 12px;
+}
+#nav .nav_box ul.navarea_r li a:hover{
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+/*导航栏右边结束*/
+/*导航栏结束*/
+
+/*轮换版开始*/
+#focus_background{
+	/*缩小可以发现宽度是100%*/
+	width: 100%;
+	height: 450px;
+	/*这样背景颜色不会覆盖背景图*/
+	/*背景图有宽度 不会100% 可以居中 背景颜色会100%*/
+	background: url(../images/1.jpg) no-repeat center #704f84;
+	
+
+}
+/*轮换版中间大盒子*/
+#focus_background #focus_box{
+	position: relative;
+	width: 1200px;
+	height: 450px;
+	/*居中*/
+	margin: 0 auto;
+	border: 1px solid black;
+}
+/*轮换版小焦点图*/
+#focus_box ul.smal_pic{
+	position: absolute;
+	top: 398px;
+	left: 0;
+	height: 50px;
+	
+
+}
+#focus_box ul.smal_pic li{
+	float: left;
+	width: 66px;
+	height: 43px;
+	margin-left: 9px;
+	border: 1px solid #4e4e4e;
+
+}
+/*在jQuery里加的样式*/
+#focus_box ul.smal_pic li.hover{
+	border: 2px solid #FFCC00;
+	margin-right: -2px;
+	margin-top: -1px;
+}
+#focus_box ul.smal_pic li a{
+	display: block;
+	position: relative;
+
+}
+
+#focus_box ul.smal_pic li a img{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+/*轮换版小焦点图结束*/
+/*播放按钮*/
+#focus_box .ico{
+	position: absolute;
+	left: 0;
+	top: 345px;
+	display: block;
+	width: 42px;
+	height: 42px;
+	
+	background: url(../images/png24.png) 0 0 no-repeat;
+
+}
+/*播放按钮结束*/
+
+/*标题开始*/
+#focus_box div.focus_title{
+	position: absolute;
+	top: 359px;
+	left: 59px;
+	/*宽度足够，文字才不会被挤下去*/
+	width: 894px;
+}
+#focus_box div.focus_title a{
+	display: block;
+	position: absolute;
+	/*每个a都要在同一个位置显示，所以每个a的left和top一样;*/
+	left: 0;
+	top: -8px;
+	font-size: 20px;
+	color: #fff;
+	display: none;
+	font-family: "Microsoft YaHei";
+	font-weight: 400;
+
+}
+/*标题结束*/
+
+
+
+/*轮换版中间大盒子结束*/
+
+/*轮换版结束*/
+
