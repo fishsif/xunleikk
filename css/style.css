@@ -680,9 +680,78 @@ height: 12px;
 
 }
 /*标题结束*/
+/*全部分类*/
+#focus_box .focusrank{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 238px;
+	height: 448px;
+	background: #323232;
+	border: 1px solid #474546;
 
+}
+#focus_box .focusrank p.title{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 238px;
+	height: 31px;
+	background: #292929;
+	line-height: 31px;
 
+}
+#focus_box .focusrank p.title a{
+	float: left;
+	color: #999999;
+	font-family: "Microsoft YaHei";
+	font-size: 14px;
+	padding-left: 2px;
+	padding-right: 2px;
+	margin-left: 4px;
+}
+#focus_box .focusrank p.title a.rank_hover{
+	color: #249FF1;
+	border-bottom: 2px solid #249FF1;
 
+}
+/*全部分类结束*/
+#focus_box .focusrank .content{
+	position: absolute;
+	top: 31px;
+	left: 8px;
+	height: 417px;
+	width: 220px;
+}
+#focus_box .focusrank div.content li{
+	position: relative;
+	width: 220px;
+	height: 20px;
+	margin-top: 12px;
+	color: #767676;
+}
+#focus_box .focusrank div.content li em{
+	position: absolute;
+	top: 0px;
+	left: 0;
+	display: block;
+	width: 20px;
+	height: 18px;
+	text-align: center;
+	line-height: 18px;
+	border: 1px solid #4f4f4f;
+	font-style: normal;
+	font-family: "宋体","Arial Narrow";
+
+}
+#focus_box .focusrank div.content li p a{
+	line-height: 20px;
+	font-family: "Tahoma";
+	margin-left: 30px;
+	color: #cccccc;
+	font-size: 12px;
+
+}
 /*轮换版中间大盒子结束*/
 
 /*轮换版结束*/
